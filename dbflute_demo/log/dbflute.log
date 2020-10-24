@@ -1,0 +1,294 @@
+2020-10-24 21:31:30,190 [main] INFO  (TorqueJDBCTransformTask#begin():104) - +------------------------------------------+
+2020-10-24 21:31:30,194 [main] INFO  (TorqueJDBCTransformTask#begin():105) - |                                          |
+2020-10-24 21:31:30,195 [main] INFO  (TorqueJDBCTransformTask#begin():106) - |                   JDBC                   |
+2020-10-24 21:31:30,195 [main] INFO  (TorqueJDBCTransformTask#begin():107) - |                                          |
+2020-10-24 21:31:30,195 [main] INFO  (TorqueJDBCTransformTask#begin():108) - +------------------------------------------+
+2020-10-24 21:31:30,224 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2020-10-24 21:31:30,225 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2020-10-24 21:31:30,225 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/test_database
+2020-10-24 21:31:30,226 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = docker
+2020-10-24 21:31:30,292 [main] INFO  (DfSchemaXmlSerializer#serialize():286) - 
+2020-10-24 21:31:30,294 [main] INFO  (DfSchemaXmlSerializer#serialize():287) - ...Starting to process JDBC to SchemaXML
+2020-10-24 21:31:30,294 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1532) - ...Loading previous schema (schema diff process)
+2020-10-24 21:31:30,311 [main] INFO  (DfSchemaXmlSerializer#doLoadPreviousSchema():1535) -  -> no previous (first time)
+2020-10-24 21:31:30,329 [main] INFO  (DfSchemaXmlSerializer#generateXML():360) - ...Getting DB connection
+2020-10-24 21:31:30,350 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2020-10-24 21:31:31,181 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = MySQL 8.0.21
+2020-10-24 21:31:31,182 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = MySQL Connector Java mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e ) for JDBC 4.0
+2020-10-24 21:31:31,183 [main] INFO  (DfSchemaXmlSerializer#generateXML():363) - ...Getting DB meta data
+2020-10-24 21:31:31,187 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2020-10-24 21:31:31,187 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {test_database.$$NoNameSchema$$ as main}
+2020-10-24 21:31:31,188 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2020-10-24 21:31:31,201 [main] INFO  (DfDbCommentExtractorBase#doSelectUserTabComments():121) - select table_type as OBJECT_TYPE, table_name as TABLE_NAME, table_comment as COMMENTS from information_schema.tables where table_schema = 'test_database' order by table_name asc
+2020-10-24 21:31:31,207 [main] INFO  (DfDbCommentExtractorBase#doSelectUserColComments():168) - select table_name as TABLE_NAME, column_name as COLUMN_NAME, column_comment as COMMENTS from information_schema.columns where table_schema = 'test_database' order by table_name asc, column_name asc
+2020-10-24 21:31:31,216 [main] INFO  (DfDatetimePrecisionExtractorMySQL#extractDatetimePrecisionMap():59) - select TABLE_NAME, COLUMN_NAME, DATETIME_PRECISION from INFORMATION_SCHEMA.COLUMNS where TABLE_SCHEMA = 'test_database' and DATA_TYPE = 'datetime'
+2020-10-24 21:31:31,231 [main] INFO  (DfSchemaXmlSerializer#processTable():420) - 
+2020-10-24 21:31:31,231 [main] INFO  (DfSchemaXmlSerializer#processTable():421) - $ /= = = = = = = = = = = = = = = = = = = = = = = = = =
+2020-10-24 21:31:31,231 [main] INFO  (DfSchemaXmlSerializer#processTable():422) - $ [Table List]
+2020-10-24 21:31:31,232 [main] INFO  (DfSchemaXmlSerializer#doProcessTable():502) - $ test_database.user(TABLE)
+2020-10-24 21:31:31,292 [main] INFO  (DfSchemaXmlSerializer#processTable():434) - $ 
+2020-10-24 21:31:31,292 [main] INFO  (DfSchemaXmlSerializer#processTable():435) - $ [Table Count]
+2020-10-24 21:31:31,292 [main] INFO  (DfSchemaXmlSerializer#processTable():436) - $ 1
+2020-10-24 21:31:31,292 [main] INFO  (DfSchemaXmlSerializer#processTable():437) - $ = = = = = = = = = =/
+2020-10-24 21:31:31,292 [main] INFO  (DfSchemaXmlSerializer#processTable():438) - 
+2020-10-24 21:31:31,294 [main] INFO  (DfSchemaXmlSerializer#processSequence():805) - ...Getting sequences
+2020-10-24 21:31:31,299 [main] INFO  (DfSchemaXmlSerializer#serialize():301) - ...Serializing XML:
+2020-10-24 21:31:31,300 [main] INFO  (DfSchemaXmlSerializer#serialize():302) -   filePath = ./schema/project-schema-demo.xml
+2020-10-24 21:31:31,300 [main] INFO  (DfSchemaXmlSerializer#serialize():303) -   encoding = UTF-8
+2020-10-24 21:31:31,317 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1550) - ...Loading next schema (schema diff process)
+2020-10-24 21:31:31,337 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2020-10-24 21:31:31,498 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1555) -  -> different from previous (schema diff)
+2020-10-24 21:31:31,500 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1557) - ...Serializing schema-diff:
+2020-10-24 21:31:31,501 [main] INFO  (DfSchemaXmlSerializer#doLoadNextSchema():1558) -   filePath = ./schema/project-history-demo.diffmap
+2020-10-24 21:31:31,521 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2020-10-24 21:31:31,568 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s394ms
+
+  DBFLUTE_CLIENT: {demo}
+    database  = mysql (MySQL 8.0.21)
+    language  = java
+    container = spring
+    package   = com.example.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/test_database
+    schema = {test_database.$$NoNameSchema$$ as main}
+    user   = docker
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {JDBC}
+2020-10-24 21:31:32,774 [main] INFO  (TorqueDocumentationTask#begin():193) - +------------------------------------------+
+2020-10-24 21:31:32,777 [main] INFO  (TorqueDocumentationTask#begin():194) - |                                          |
+2020-10-24 21:31:32,778 [main] INFO  (TorqueDocumentationTask#begin():195) - |                   Doc                    |
+2020-10-24 21:31:32,779 [main] INFO  (TorqueDocumentationTask#begin():203) - |                                          |
+2020-10-24 21:31:32,779 [main] INFO  (TorqueDocumentationTask#begin():204) - +------------------------------------------+
+2020-10-24 21:31:32,808 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2020-10-24 21:31:32,809 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2020-10-24 21:31:32,809 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/test_database
+2020-10-24 21:31:32,809 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = docker
+2020-10-24 21:31:32,814 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():265) - 
+2020-10-24 21:31:32,814 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():266) - * * * * * * * * * * *
+2020-10-24 21:31:32,814 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():267) - *                   *
+2020-10-24 21:31:32,815 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():268) - *    Schema HTML    *
+2020-10-24 21:31:32,815 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():269) - *                   *
+2020-10-24 21:31:32,815 [main] INFO  (TorqueDocumentationTask#processSchemaHtml():270) - * * * * * * * * * * *
+2020-10-24 21:31:32,886 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2020-10-24 21:31:32,962 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2020-10-24 21:31:32,963 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2020-10-24 21:31:32,965 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2020-10-24 21:31:32,967 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2020-10-24 21:31:32,968 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2020-10-24 21:31:32,969 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2020-10-24 21:31:32,972 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - /=======================================
+2020-10-24 21:31:32,972 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():69) - ...Initializing additional foreign keys.
+2020-10-24 21:31:32,975 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():88) - ==========/
+2020-10-24 21:31:32,991 [main] INFO  (DfClassificationProperties#initializeClassificationDeployment():1085) - ...Initializing ClassificationDeployment: project=demo
+2020-10-24 21:31:33,077 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():253) - generator.parse("doc/ControlDocument.vm", ctx);
+2020-10-24 21:31:33,229 [main] INFO  (Database#doEnableDocumentOutputDirectory():1242) - ...Setting up documentOutputDirectory: ./output/doc
+2020-10-24 21:31:33,236 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():242) - ...Loading schema history
+2020-10-24 21:31:33,255 [main] INFO  (DfDocumentSelector#doLoadSchemaHistory():246) -  -> found history: count=1
+2020-10-24 21:31:33,323 [main] INFO  (DfSchemaHtmlDataArrangeQuery#getArrangeQueryTableMap():50) -  
+2020-10-24 21:31:33,324 [main] INFO  (DfSchemaHtmlDataArrangeQuery#getArrangeQueryTableMap():51) - ...Setting up arrange queries for documents (ArrangeQueryDoc)
+2020-10-24 21:31:33,337 [main] INFO  (DfArrangeQueryDocSetupper#doExtractArrangeQuery():106) -  -> no arrange query
+2020-10-24 21:31:33,444 [main] INFO  (DfRefreshMan#resolveProjectAutoDetect():105) - *Cannot auto-detect your refresh Eclipse proejct.
+2020-10-24 21:31:33,445 [main] INFO  (DfRefreshResourceProcess#show():295) - /===========================================================================
+2020-10-24 21:31:33,446 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Refreshing [$$AutoDetect$$] by http://localhost:8386/
+2020-10-24 21:31:35,466 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Retrying refreshing by default secondary URL http://localhost:8387/
+2020-10-24 21:31:37,469 [main] INFO  (DfRefreshResourceProcess#show():295) - Failed to refresh the resources (continued): url=http://localhost:8386/, cause=ConnectException(Connection refused: connect)
+2020-10-24 21:31:37,469 [main] INFO  (DfRefreshResourceProcess#show():295) - ==========/
+2020-10-24 21:31:37,473 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m04s722ms
+
+  DBFLUTE_CLIENT: {demo}
+    database  = mysql
+    language  = java
+    container = spring
+    package   = com.example.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/test_database
+    schema = {test_database.$$NoNameSchema$$ as main}
+    user   = docker
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Doc}
+2020-10-24 21:31:40,247 [main] INFO  (TorqueDataModelTask#begin():110) - +------------------------------------------+
+2020-10-24 21:31:40,249 [main] INFO  (TorqueDataModelTask#begin():111) - |                                          |
+2020-10-24 21:31:40,250 [main] INFO  (TorqueDataModelTask#begin():112) - |                 Generate                 |
+2020-10-24 21:31:40,250 [main] INFO  (TorqueDataModelTask#begin():113) - |                                          |
+2020-10-24 21:31:40,250 [main] INFO  (TorqueDataModelTask#begin():114) - +------------------------------------------+
+2020-10-24 21:31:40,275 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2020-10-24 21:31:40,276 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2020-10-24 21:31:40,276 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/test_database
+2020-10-24 21:31:40,276 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = docker
+2020-10-24 21:31:40,298 [main] INFO  (TorqueDataModelTask#setupControlTemplate():166) - 
+2020-10-24 21:31:40,298 [main] INFO  (TorqueDataModelTask#setupControlTemplate():167) - ...Using Java control: om/ControlGenerateJava.vm
+2020-10-24 21:31:40,345 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2020-10-24 21:31:40,384 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():253) - generator.parse("om/ControlGenerateJava.vm", ctx);
+2020-10-24 21:31:40,563 [main] INFO  (Database#doEnableGenerateOutputDirectory():1210) - ...Setting up generateOutputDirectory: ../src/main/java
+2020-10-24 21:31:40,569 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():62) - /=======================================
+2020-10-24 21:31:40,569 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():63) - ...Initializing additional primary keys.
+2020-10-24 21:31:40,570 [main] INFO  (DfAdditionalPrimaryKeyInitializer#initializeAdditionalPrimaryKey():88) - ==========/
+2020-10-24 21:31:40,571 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():62) - /=======================================
+2020-10-24 21:31:40,572 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():63) - ...Initializing additional unique keys.
+2020-10-24 21:31:40,573 [main] INFO  (DfAdditionalUniqueKeyInitializer#initializeAdditionalUniqueKey():83) - ==========/
+2020-10-24 21:31:40,575 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():68) - /=======================================
+2020-10-24 21:31:40,575 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():69) - ...Initializing additional foreign keys.
+2020-10-24 21:31:40,577 [main] INFO  (DfAdditionalForeignKeyInitializer#initializeAdditionalForeignKey():88) - ==========/
+2020-10-24 21:31:40,586 [main] INFO  (DfClassificationProperties#initializeClassificationDeployment():1085) - ...Initializing ClassificationDeployment: project=demo
+2020-10-24 21:31:40,595 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():58) - /=============================
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():59) - ...Initializing include query.
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - String
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - Number
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - Date
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   NotEqual -> []
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   InScope -> []
+2020-10-24 21:31:40,596 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():86) -   NotInScope -> []
+2020-10-24 21:31:40,597 [main] INFO  (DfIncludeQueryInitializer#checkQueryMap():81) - OrderBy
+2020-10-24 21:31:40,597 [main] INFO  (DfIncludeQueryInitializer#initializeIncludeQuery():61) - ========/
+2020-10-24 21:31:40,615 [main] INFO  (Database#info():2846) - public void parseAllCommon() {
+2020-10-24 21:31:40,617 [main] INFO  (Database#info():2846) -     parse('DBCurrent');
+2020-10-24 21:31:40,626 [main] INFO  (Database#info():2846) -     parse('DBFluteConfig');
+2020-10-24 21:31:40,641 [main] INFO  (Database#info():2846) -     parse('DBFluteInitializer');
+2020-10-24 21:31:40,649 [main] INFO  (Database#info():2846) -     parse('DBMetaInstanceHandler');
+2020-10-24 21:31:40,673 [main] INFO  (Database#info():2846) -     parse('EntityDefinedCommonColumn');
+2020-10-24 21:31:40,679 [main] INFO  (Database#info():2846) -     parse('ImplementedBehaviorSelector');
+2020-10-24 21:31:40,687 [main] INFO  (Database#info():2846) -     parse('ImplementedCommonColumnAutoSetupper');
+2020-10-24 21:31:40,696 [main] INFO  (Database#info():2846) -     parse('ImplementedInvokerAssistant');
+2020-10-24 21:31:40,705 [main] INFO  (Database#info():2846) -     parse('ImplementedSqlClauseCreator');
+2020-10-24 21:31:40,711 [main] INFO  (Database#info():2846) - }
+2020-10-24 21:31:40,711 [main] INFO  (Database#info():2846) - public void parseContainerConfig() {
+2020-10-24 21:31:40,712 [main] INFO  (Database#info():2846) -     parse('com\example\dbflute\allcommon\DBFluteBeansJavaConfig.java')
+2020-10-24 21:31:40,732 [main] INFO  (Database#info():2846) - }
+2020-10-24 21:31:40,740 [main] INFO  (DfOldClassHandler#info():1045) - public void deleteOldTableClass() {
+2020-10-24 21:31:40,765 [main] INFO  (DfOldClassHandler#info():1045) - }
+2020-10-24 21:31:40,765 [main] INFO  (Database#info():2846) - public void parseTableClass() {
+2020-10-24 21:31:40,766 [main] INFO  (Database#info():2846) -     parse('user');
+2020-10-24 21:31:40,985 [main] INFO  (Database#info():2846) - }
+2020-10-24 21:31:40,985 [main] INFO  (Database#info():2846) -  
+2020-10-24 21:31:41,060 [main] INFO  (DfRefreshMan#resolveProjectAutoDetect():105) - *Cannot auto-detect your refresh Eclipse proejct.
+2020-10-24 21:31:41,062 [main] INFO  (DfRefreshResourceProcess#show():295) - /===========================================================================
+2020-10-24 21:31:41,063 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Refreshing [$$AutoDetect$$] by http://localhost:8386/
+2020-10-24 21:31:43,069 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Retrying refreshing by default secondary URL http://localhost:8387/
+2020-10-24 21:31:45,073 [main] INFO  (DfRefreshResourceProcess#show():295) - Failed to refresh the resources (continued): url=http://localhost:8386/, cause=ConnectException(Connection refused: connect)
+2020-10-24 21:31:45,073 [main] INFO  (DfRefreshResourceProcess#show():295) - ==========/
+2020-10-24 21:31:45,078 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m04s845ms
+
+  DBFLUTE_CLIENT: {demo}
+    database  = mysql
+    language  = java
+    container = spring
+    package   = com.example.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/test_database
+    schema = {test_database.$$NoNameSchema$$ as main}
+    user   = docker
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Generate}
+2020-10-24 21:31:45,965 [main] INFO  (DfOutsideSqlTestTask#begin():77) - +------------------------------------------+
+2020-10-24 21:31:45,968 [main] INFO  (DfOutsideSqlTestTask#begin():78) - |                                          |
+2020-10-24 21:31:45,968 [main] INFO  (DfOutsideSqlTestTask#begin():79) - |              OutsideSqlTest              |
+2020-10-24 21:31:45,968 [main] INFO  (DfOutsideSqlTestTask#begin():80) - |                                          |
+2020-10-24 21:31:45,968 [main] INFO  (DfOutsideSqlTestTask#begin():81) - +------------------------------------------+
+2020-10-24 21:31:45,991 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2020-10-24 21:31:45,991 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2020-10-24 21:31:45,991 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/test_database
+2020-10-24 21:31:45,991 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = docker
+2020-10-24 21:31:46,024 [main] INFO  (DfSqlFileFireMan#fire():93) - Fired SQL: success=0, failure=0 (in 0 files)
+2020-10-24 21:31:46,032 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m00s076ms
+
+  DBFLUTE_CLIENT: {demo}
+    database  = mysql
+    language  = java
+    container = spring
+    package   = com.example.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/test_database
+    schema = {test_database.$$NoNameSchema$$ as main}
+    user   = docker
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ {Checked SQL}
+_/_/_/_/_/_/_/_/_/_/ {OutsideSqlTest}
+2020-10-24 21:31:46,973 [main] INFO  (DfSql2EntityTask#begin():106) - +------------------------------------------+
+2020-10-24 21:31:46,976 [main] INFO  (DfSql2EntityTask#begin():107) - |                                          |
+2020-10-24 21:31:46,976 [main] INFO  (DfSql2EntityTask#begin():108) - |                Sql2Entity                |
+2020-10-24 21:31:46,976 [main] INFO  (DfSql2EntityTask#begin():109) - |                                          |
+2020-10-24 21:31:46,976 [main] INFO  (DfSql2EntityTask#begin():110) - +------------------------------------------+
+2020-10-24 21:31:46,997 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2020-10-24 21:31:46,998 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2020-10-24 21:31:46,998 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/test_database
+2020-10-24 21:31:46,998 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = docker
+2020-10-24 21:31:47,015 [main] INFO  (DfSql2EntityTask#setupControlTemplate():177) - 
+2020-10-24 21:31:47,015 [main] INFO  (DfSql2EntityTask#setupControlTemplate():178) - ...Using Java control: om/ControlSql2EntityJava.vm
+2020-10-24 21:31:47,024 [main] INFO  (DTDResolver#resolveEntity():195) - ...Resolving XML by database.dtd in same package
+2020-10-24 21:31:47,077 [main] INFO  (DfSqlFileFireMan#fire():93) - Fired SQL: success=0, failure=0 (in 0 files)
+2020-10-24 21:31:47,122 [main] INFO  (DfSql2EntityTask#initControlContext():311) - 
+2020-10-24 21:31:47,122 [main] INFO  (DfSql2EntityTask#initControlContext():312) - ...Preparing generation of customize-entities and parameter-beans
+2020-10-24 21:31:47,122 [main] INFO  (DfSql2EntityTask#initControlContext():313) - * * * * * * * * * *
+2020-10-24 21:31:47,122 [main] INFO  (DfSql2EntityTask#initControlContext():314) - * CustomizeEntity *
+2020-10-24 21:31:47,122 [main] INFO  (DfSql2EntityTask#initControlContext():315) - * * * * * * * * * *
+2020-10-24 21:31:47,123 [main] INFO  (DfSql2EntityTask#showParameterBean():932) - * * * * * * * * *
+2020-10-24 21:31:47,123 [main] INFO  (DfSql2EntityTask#showParameterBean():933) - * ParameterBean *
+2020-10-24 21:31:47,123 [main] INFO  (DfSql2EntityTask#showParameterBean():934) - * * * * * * * * *
+2020-10-24 21:31:47,128 [main] INFO  (DfAbstractTexenTask#fireVelocityProcess():253) - generator.parse("om/ControlSql2EntityJava.vm", ctx);
+2020-10-24 21:31:47,310 [main] INFO  (DfClassificationProperties#initializeClassificationDeployment():1085) - ...Initializing ClassificationDeployment: project=demo
+2020-10-24 21:31:47,311 [main] INFO  (DfClassificationProperties#initializeClassificationDeployment():1085) - ...Initializing ClassificationDeployment: project=demo
+2020-10-24 21:31:47,315 [main] INFO  (Database#doEnableSql2EntityOutputDirectory():1226) - ...Setting up sql2EntityOutputDirectory: ../src/main/java
+2020-10-24 21:31:47,317 [main] INFO  (DfOldClassHandler#info():1045) - public void deleteOldCustomizeClass() {
+2020-10-24 21:31:47,328 [main] INFO  (DfOldClassHandler#info():1045) - }
+2020-10-24 21:31:47,328 [main] INFO  (Database#info():2846) - public void parseCustomizeEntity() {
+2020-10-24 21:31:47,330 [main] INFO  (Database#info():2846) - }
+2020-10-24 21:31:47,366 [main] INFO  (DfSql2EntityTask#showTargetSqlFileInformation():303) - 
+/- - - - - - - - - - - - - - - - - - - - - - - -
+Target SQL files: 0
+
+- - - - - - - - - -/
+2020-10-24 21:31:47,368 [main] INFO  (DfRefreshMan#resolveProjectAutoDetect():105) - *Cannot auto-detect your refresh Eclipse proejct.
+2020-10-24 21:31:47,370 [main] INFO  (DfRefreshResourceProcess#show():295) - /===========================================================================
+2020-10-24 21:31:47,371 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Refreshing [$$AutoDetect$$] by http://localhost:8386/
+2020-10-24 21:31:49,397 [main] INFO  (DfRefreshResourceProcess#show():295) - ...Retrying refreshing by default secondary URL http://localhost:8387/
+2020-10-24 21:31:51,401 [main] INFO  (DfRefreshResourceProcess#show():295) - Failed to refresh the resources (continued): url=http://localhost:8386/, cause=ConnectException(Connection refused: connect)
+2020-10-24 21:31:51,401 [main] INFO  (DfRefreshResourceProcess#show():295) - ==========/
+2020-10-24 21:31:51,406 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m04s447ms
+
+  DBFLUTE_CLIENT: {demo}
+    database  = mysql
+    language  = java
+    container = spring
+    package   = com.example.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/test_database
+    schema = {test_database.$$NoNameSchema$$ as main}
+    user   = docker
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+_/_/_/_/_/_/_/_/_/_/ {Sql2Entity}
