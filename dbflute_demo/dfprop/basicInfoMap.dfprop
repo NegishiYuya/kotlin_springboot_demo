@@ -36,7 +36,7 @@ map:{
     #    mysql, postgresql, oracle, db2, sqlserver,
     #    h2, derby, (sqlite, firebird, msaccess)
     #
-    ; database = @database@
+    ; database = mysql
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -46,7 +46,7 @@ map:{
     #
     #       java, csharp, scala
     #
-    ; targetLanguage = @targetLanguage@
+    ; targetLanguage = java
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -56,7 +56,7 @@ map:{
     #
     #       spring, guice, seasar, cdi, lasta_di
     #
-    ; targetContainer = @targetContainer@
+    ; targetContainer = spring
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
